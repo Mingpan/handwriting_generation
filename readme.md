@@ -44,7 +44,7 @@ Two modes available, `--mode prediction` or `--mode synthesis`, for freely gener
 
 And a window alignment figure will be generated, which tells the connection between characters (vertical axis) and respective strokes (horizontal axis). This should reveal if the generation is performing well.  
 
-<img src="https://github.com/Mingpan/handwriting_generation/blob/master/samples/sample_window.svg" >
+<img src="https://github.com/Mingpan/handwriting_generation/blob/master/samples/sample_window.svg">
 
 ## Generating given texts with a style in the training set
 (For this you need to download the training dataset first, see dependencies.)  
@@ -54,7 +54,7 @@ And a window alignment figure will be generated, which tells the connection betw
 
 Similarly, a window alignment figure will be generated.  
 
-<img src="https://github.com/Mingpan/handwriting_generation/blob/master/samples/sample_window_copy.svg">    
+<img src="https://github.com/Mingpan/handwriting_generation/blob/master/samples/sample_copy_window.svg">    
 
 A reference handwriting will be drawn. One can therefore tell if the copying was good enough.  
 
