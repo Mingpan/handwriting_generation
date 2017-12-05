@@ -34,45 +34,45 @@ def one_hot_vectorize(data, max_dim):
 
 
 def texts_prep_for_sampling(texts):
-    ints = []
-    for i, char in enumerate(texts):
-      if char in REV_VOCAB:
-        ints.append(REV_VOCAB[char])
-      else:
-        ints.append(len(VOCAB)) # out of vocab token
+  ints = []
+  for i, char in enumerate(texts):
+    if char in REV_VOCAB:
+      ints.append(REV_VOCAB[char])
+    else:
+      ints.append(len(VOCAB)) # out of vocab token
 
-    text_vec = one_hot_vectorize(ints, len(VOCAB)+1)
-    # num_fill = 1
-    # chars_to_fill = np.zeros((num_fill, self.char_vec_dim))
-    # chars_to_fill[:, REV_VOCAB[" "]] = 1.
-    # text_vec = np.concatenate((text_vec, chars_to_fill), axis=0)
-    return np.expand_dims(text_vec, axis=0)
+  text_vec = one_hot_vectorize(ints, len(VOCAB)+1)
+  # num_fill = 1
+  # chars_to_fill = np.zeros((num_fill, self.char_vec_dim))
+  # chars_to_fill[:, REV_VOCAB[" "]] = 1.
+  # text_vec = np.concatenate((text_vec, chars_to_fill), axis=0)
+  return np.expand_dims(text_vec, axis=0)
 
 def numpy_fillzeros(data):
-    """ Reshape a list of 2D arrays to a 3D array.
-        Insufficient length arrays with be filled with 0s.
-        test input:
-            [np.array([[1., 1., 1.]]), 
-             np.array([[2., 2., 0.], [3., 3., 1.]])]
-        expected output:
-            np.array([[[1., 1., 1.],
-                      [0., 0., 0.]],
-                     [[2., 2., 0.],
-                      [3., 3., 1.]]])
-            np.array([[[1.],
-                      [0.]],
-                     [[1.],
-                      [1.]]])
-    """
-    # get the lengths of all arrays
-    lens = np.array([ d.shape[0] for d in data]) # [batch]
-    # mask out the insufficient part
-    mask2d = np.arange(lens.max()) < lens[:, None] # [batch, max_len]
-    mask = np.repeat(mask2d[:, :, None], 3, axis=2) # [batch, max_len, 3]
-    # setup a matrix of the right size and fill in the values
-    out = np.zeros(mask.shape) # [batch, max_len, 3]
-    out[mask] = np.concatenate(data).flatten()
-    return out, mask2d[:,:,None].astype(np.float32)
+  """ Reshape a list of 2D arrays to a 3D array.
+      Insufficient length arrays with be filled with 0s.
+      test input:
+          [np.array([[1., 1., 1.]]), 
+           np.array([[2., 2., 0.], [3., 3., 1.]])]
+      expected output:
+          np.array([[[1., 1., 1.],
+                    [0., 0., 0.]],
+                   [[2., 2., 0.],
+                    [3., 3., 1.]]])
+          np.array([[[1.],
+                    [0.]],
+                   [[1.],
+                    [1.]]])
+  """
+  # get the lengths of all arrays
+  lens = np.array([ d.shape[0] for d in data]) # [batch]
+  # mask out the insufficient part
+  mask2d = np.arange(lens.max()) < lens[:, None] # [batch, max_len]
+  mask = np.repeat(mask2d[:, :, None], 3, axis=2) # [batch, max_len, 3]
+  # setup a matrix of the right size and fill in the values
+  out = np.zeros(mask.shape) # [batch, max_len, 3]
+  out[mask] = np.concatenate(data).flatten()
+  return out, mask2d[:,:,None].astype(np.float32)
 
 
 def get_bounds(data, factor):
@@ -310,27 +310,27 @@ class DataLoader():
       return stroke_data
 
     def get_ascii(stroke_filename):
-        """get the ascii data, inferred from the stroke filename
-        """
-        # divide the stroke_filename into:
-        # real_filename + (-) +  line_index + (.xml)
-        filename, _ = stroke_filename.rsplit(".", 1)
-        real_filename, line_index = filename.rsplit("-", 1)
+      """get the ascii data, inferred from the stroke filename
+      """
+      # divide the stroke_filename into:
+      # real_filename + (-) +  line_index + (.xml)
+      filename, _ = stroke_filename.rsplit(".", 1)
+      real_filename, line_index = filename.rsplit("-", 1)
 
-        # get the ascii file path
-        ascii_filename = real_filename.replace(data_dir, text_dir) + ".txt"
-        with open(ascii_filename, "r") as f:
-            texts = f.readlines()
+      # get the ascii file path
+      ascii_filename = real_filename.replace(data_dir, text_dir) + ".txt"
+      with open(ascii_filename, "r") as f:
+        texts = f.readlines()
 
-        for i in range(len(texts)):
-            if texts[i].strip() == "CSR:":
-                try:
-                    # skip an empty line, then add the line_index
-                    return texts[i + 1 + int(line_index)].strip()
-                except:
-                    print("Cannot find the characters for stroke file %s"
-                          % real_filename)
-                    return None
+      for i in range(len(texts)):
+        if texts[i].strip() == "CSR:":
+          try:
+            # skip an empty line, then add the line_index
+            return texts[i + 1 + int(line_index)].strip()
+          except:
+            print("Cannot find the characters for stroke file %s"
+                  % real_filename)
+            return None
 
     def char2int(chars, vocab):
       """ This func. reads all the chars
@@ -365,15 +365,15 @@ class DataLoader():
       if (filelist[i][-3:] == 'xml'):
         chars = get_ascii(filelist[i])
         if chars:
-            # if the characters can be found
-            print('processing '+filelist[i])
-            strokes.append(convert_stroke_to_array(getStrokes(filelist[i])))
-            # text.append(char2int(chars, vocab))
-            text.append(char2int_reduced(chars))
+          # if the characters can be found
+          print('processing '+filelist[i])
+          strokes.append(convert_stroke_to_array(getStrokes(filelist[i])))
+          # text.append(char2int(chars, vocab))
+          text.append(char2int_reduced(chars))
 
     rev_vocab = {} # rev_vocab[char] = int
     for i, char in enumerate(vocab):
-        rev_vocab[char] = i
+      rev_vocab[char] = i
 
     preprocessed = {}
     preprocessed["strokes"] = strokes
@@ -384,11 +384,11 @@ class DataLoader():
     preprocessed["char2int_53"] = REV_VOCAB
 
     with open(data_file,"wb") as f:
-        pickle.dump(preprocessed, f, protocol=2)
+      pickle.dump(preprocessed, f, protocol=2)
 
   def load_preprocessed(self, data_file):
     with open(data_file,"rb") as f:
-        self.raw_data = pickle.load(f)
+      self.raw_data = pickle.load(f)
 
     strokes = self.raw_data["strokes"]
     # self.rev_vocab = self.raw_data["char2int"]
