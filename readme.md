@@ -39,18 +39,26 @@ Two modes available, `--mode prediction` or `--mode synthesis`, for freely gener
 # Example
 ## Naive generating given texts
 `python sample.py` the result would be a handwriting as follows.  
-![Image Not Found!](samples/sample.normal.svg)  
+
+<img src="https://github.com/Mingpan/handwriting_generation/blob/master/samples/sample.normal.svg" width="500" height="100">  
+
 And a window alignment figure will be generated, which tells the connection between characters (vertical axis) and respective strokes (horizontal axis). This should reveal if the generation is performing well.  
-![Image Not Found!](samples/sample_window.svg)
+
+<img src="https://github.com/Mingpan/handwriting_generation/blob/master/samples/sample_window.svg" >
 
 ## Generating given texts with a style in the training set
 (For this you need to download the training dataset first, see dependencies.)  
 `python sample.py --copy_style 2` the result would be a handwriting that mimics the second training example.   
-![Image Not Found!](samples/sample_copy.normal.svg)  
+
+<img src="https://github.com/Mingpan/handwriting_generation/blob/master/samples/sample_copy.normal.svg" width="500" height="100">    
+
 Similarly, a window alignment figure will be generated.  
-![Image Not Found!](samples/sample_window_copy.svg)  
+
+<img src="https://github.com/Mingpan/handwriting_generation/blob/master/samples/sample_window_copy.svg">    
+
 A reference handwriting will be drawn. One can therefore tell if the copying was good enough.  
-![Image Not Found!](samples/sample_copy.normal_ref.svg)  
+
+<img src="https://github.com/Mingpan/handwriting_generation/blob/master/samples/sample_copy.normal_ref.svg" width="500" height="100">    
 
 # License for the code
 MIT
