@@ -1,5 +1,5 @@
 
-![This is a handwriting generation model](samples/this_is_a_handwriting_generation_model_13.svg)  
+<img src="https://github.com/Mingpan/handwriting_generation/blob/master/samples/this_is_a_handwriting_generation_model_13.svg" width="250" height="48">
 ![It is able to write texts as given](samples/it_is_able_to_write_texts_as_given_13.svg)  
 ![or change writing style](samples/or_change_writing_style_2.svg)  
 ![if asked to](samples/if_asked_to_554.svg)  
