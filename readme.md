@@ -1,8 +1,11 @@
 
-<img src="https://github.com/Mingpan/handwriting_generation/blob/master/samples/this_is_a_handwriting_generation_model_13.svg" width="250" height="48">
-![It is able to write texts as given](samples/it_is_able_to_write_texts_as_given_13.svg)  
-![or change writing style](samples/or_change_writing_style_2.svg)  
-![if asked to](samples/if_asked_to_554.svg)  
+<img src="https://github.com/Mingpan/handwriting_generation/blob/master/samples/this_is_a_handwriting_generation_model_13.svg" width="1000" height="150">
+
+<img src="https://github.com/Mingpan/handwriting_generation/blob/master/samples/it_is_able_to_write_texts_as_given_13.svg" width="1000" height="150">
+
+<img src="https://github.com/Mingpan/handwriting_generation/blob/master/samples/or_change_writing_style_2.svg" width="700" height="150">
+
+<img src="https://github.com/Mingpan/handwriting_generation/blob/master/samples/if_asked_to_554.svg" width="400" height="150">
 
 # Dependencies
 python3.5,  
@@ -59,4 +62,4 @@ It could be that the allocated tensors are too big, try a smaller batch size etc
 Copying only from good training examples can increase the quality a bit. Also, I didn't try a lot of hyperparameter settings. Train a model of your own using better hyperparameters if you like.
 
 
-![Any feedback is welcome](samples/any_feedback_is_welcome.svg)  
+<img src="https://github.com/Mingpan/handwriting_generation/blob/master/samples/any_feedback_is_welcome.svg" width="700" height="150">
