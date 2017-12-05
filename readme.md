@@ -1,8 +1,8 @@
 
-![This is a handwriting generation model](samples/this_is_a_handwriting_generation_model_13.svg?raw=true)  
-![It is able to write texts as given](samples/it_is_able_to_write_texts_as_given_13.svg?raw=true)  
-![or change writing style](samples/or_change_writing_style_2.svg?raw=true)  
-![if asked to](samples/if_asked_to_554.svg?raw=true)  
+![This is a handwriting generation model](samples/this_is_a_handwriting_generation_model_13.svg)  
+![It is able to write texts as given](samples/it_is_able_to_write_texts_as_given_13.svg)  
+![or change writing style](samples/or_change_writing_style_2.svg)  
+![if asked to](samples/if_asked_to_554.svg)  
 
 # Dependencies
 python3.5,  
@@ -36,18 +36,18 @@ Two modes available, `--mode prediction` or `--mode synthesis`, for freely gener
 # Example
 ## Naive generating given texts
 `python sample.py` the result would be a handwriting as follows.  
-![Image Not Found!](samples/sample.normal.svg?raw=true)  
+![Image Not Found!](samples/sample.normal.svg)  
 And a window alignment figure will be generated, which tells the connection between characters (vertical axis) and respective strokes (horizontal axis). This should reveal if the generation is performing well.  
-![Image Not Found!](samples/sample_window.svg?raw=true)
+![Image Not Found!](samples/sample_window.svg)
 
 ## Generating given texts with a style in the training set
 (For this you need to download the training dataset first, see dependencies.)  
 `python sample.py --copy_style 2` the result would be a handwriting that mimics the second training example.   
-![Image Not Found!](samples/sample_copy.normal.svg?raw=true)  
+![Image Not Found!](samples/sample_copy.normal.svg)  
 Similarly, a window alignment figure will be generated.  
-![Image Not Found!](samples/sample_window_copy.svg?raw=true)  
+![Image Not Found!](samples/sample_window_copy.svg)  
 A reference handwriting will be drawn. One can therefore tell if the copying was good enough.  
-![Image Not Found!](samples/sample_copy.normal_ref.svg?raw=true)  
+![Image Not Found!](samples/sample_copy.normal_ref.svg)  
 
 # License for the code
 MIT
@@ -59,4 +59,4 @@ It could be that the allocated tensors are too big, try a smaller batch size etc
 Copying only from good training examples can increase the quality a bit. Also, I didn't try a lot of hyperparameter settings. Train a model of your own using better hyperparameters if you like.
 
 
-![Any feedback is welcome](samples/any_feedback_is_welcome.svg?raw=true)  
+![Any feedback is welcome](samples/any_feedback_is_welcome.svg)  
