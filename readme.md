@@ -23,7 +23,9 @@ Necessary for training / copying writing style from training set:
 [IAM Handwriting Database](http://www.fki.inf.unibe.ch/databases/iam-on-line-handwriting-database/download-the-iam-on-line-handwriting-database)
 ## Used code from the following repo
 https://github.com/hardmaru/write-rnn-tensorflow  
-Based on this, I built the synthesis net, enable it to generate characters as specified. To mimic a specific handwriting in training set is also possible.
+Based on this, I built the synthesis net, enable it to generate characters as specified. To mimic a specific handwriting in training set is also possible.  
+I also got some useful inspirations from the following repo  
+https://github.com/snowkylin/rnn-handwriting-generation
 
 # Usage
 ## Mode
