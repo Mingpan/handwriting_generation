@@ -70,9 +70,9 @@ saver.restore(sess, ckpt.model_checkpoint_path)
 
 def sample_stroke(texts=None):
   x_init = [[[0.,0.,1.]]]
+  ref_texts = None
   if texts is not None:
     texts = texts_prep_for_sampling(texts)
-    ref_texts = None
     if sample_args.copy_style is not None:
       ref_texts = erase_empty(c)
       x_init = x

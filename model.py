@@ -391,7 +391,7 @@ class Model():
       eos, pi, mu, Sigma = outputs[:4]
       state = outputs[4:]
 
-      if checkstop(state):
+      if ref_texts is not None and checkstop(state):
         break
 
       x = sample_stroke_point(eos[0], pi[0], mu[0], Sigma[0])
