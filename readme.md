@@ -62,9 +62,6 @@ A reference handwriting will be drawn. One can therefore tell if the copying was
 
 <img src="https://github.com/Mingpan/handwriting_generation/blob/master/samples/sample_copy.normal_ref.svg" width="500" height="100">    
 
-# License for the code
-MIT
-
 # Trouble shooting
 ## OOM Error
 It could be that the allocated tensors are too big, try a smaller batch size etc.  
